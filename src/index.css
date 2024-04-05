@@ -12,6 +12,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #131415;
 }
 
 code {
@@ -88,7 +89,7 @@ code {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 15px;
+  margin-top: 20px;
   margin-right: 20px;
 }
 
