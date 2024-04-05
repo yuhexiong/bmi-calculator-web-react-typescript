@@ -31,9 +31,7 @@ npm start
 
 ## Pages
 
-### type maintain
-
 ```bash
 localhost:3000
 ```
-![image](https://github.com/yuhexiong/bmi-calculator-web-react-typescript/blob/main/image/bmi_sample.png)
+![image](https://github.com/yuhexiong/bmi-calculator-web-react-typescript/blob/main/image/bmi_sample_v2.png)
