@@ -29,9 +29,10 @@ npm build
 npm start
 ```
 
-## Pages
+## Page
 
 ```bash
 localhost:3000
 ```
+
 ![image](https://github.com/yuhexiong/bmi-calculator-web-react-typescript/blob/main/image/bmi_sample_v2.png)
