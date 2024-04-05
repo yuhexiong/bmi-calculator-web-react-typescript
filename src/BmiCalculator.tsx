@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import './index.css';
 
 const BmiCalculator = () => {
-  const [weight, setWeight] = useState<number>(0);
-  const [height, setHeight] = useState<number>(0);
+  const [weight, setWeight] = useState<string>('');
+  const [height, setHeight] = useState<string>('');
   const [bmi, setBMI] = useState<string | null>(null);
 
   const calculateBMI = () => {
@@ -11,22 +12,37 @@ const BmiCalculator = () => {
       return;
     }
 
-    const bmiValue = (weight / ((height/100) * (height/100))).toFixed(2);
+    const weightNumber = parseFloat(weight);
+    const heightNumber = parseFloat(height);
+
+    if (isNaN(weightNumber) || isNaN(heightNumber)) {
+      alert('請輸入有效的數字');
+      return;
+    }
+
+    const bmiValue = (weightNumber / ((heightNumber / 100) * (heightNumber / 100))).toFixed(2);
     setBMI(bmiValue);
   };
 
+  const clearData = () => {
+    setWeight('');
+    setHeight('');
+    setBMI(null);
+  };
+
   return (
-    <div>
-      <div>
-        <label>體重(kg):</label>
-        <input type="number" value={weight} onChange={e => setWeight(parseInt(e.target.value))} />
+    <div className="container">
+      <div className="input-group">
+        <label className="label">身高(cm):</label>
+        <input className="input" type="text" value={height} onChange={e => setHeight(e.target.value)} />
       </div>
-      <div>
-        <label>身高(cm):</label>
-        <input type="number" value={height} onChange={e => setHeight(parseInt(e.target.value))} />
+      <div className="input-group">
+        <label className="label">體重(kg):</label>
+        <input className="input" type="text" value={weight} onChange={e => setWeight(e.target.value)} />
       </div>
-      <button onClick={calculateBMI}>計算bmi</button>
-      {bmi && <p>你的bmi是 {bmi}</p>}
+      <button className="button" onClick={calculateBMI}>計算bmi</button>
+      <button className="button" onClick={clearData}>清除資料</button>
+      {bmi && <p className="result">你的bmi是 {bmi}</p>}
     </div>
   );
 };

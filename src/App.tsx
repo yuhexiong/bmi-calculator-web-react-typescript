@@ -1,5 +1,3 @@
-// src/App.tsx
-
 import React from 'react';
 import './App.css';
 import BmiCalculator from './BmiCalculator'; 
@@ -7,7 +5,9 @@ import BmiCalculator from './BmiCalculator';
 const App: React.FC = () => {
   return (
     <div className="App">
-      <h3>bmi 計算機</h3>
+      <div className="app-title">
+        <span style={{ fontSize: '25px' }}>bmi 計算機</span>
+      </div>
       <BmiCalculator />
     </div>
   );
